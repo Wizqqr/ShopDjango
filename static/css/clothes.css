@@ -1,0 +1,142 @@
+    /* Ваши стили CSS */
+  .clothes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+.center_buttons{
+  display: flex;
+  justify-content: center;
+  column-gap: 150px;
+}
+.cloth_btn{
+  width: 150px;
+  height:45px;
+}
+ .create_button {
+      display: inline-block;
+      padding: 12px 24px;
+     margin-left: 55px;
+      background-color: #007BFF; /* Blue color */
+      color: #FFFFFF; /* White text */
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none; /* Remove underline */
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .create_button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    .create_button:active {
+      background-color: #004494; /* Even darker blue on click */
+      transform: scale(0.95); /* Slightly shrink on click */
+    }
+  .cloth-item {
+    width: 30%; /* Ширина каждого элемента (товара) */
+    margin: 10px; /* Расстояние между элементами */
+    padding: 20px;
+    border: 1px solid #ccc; /* Обрамление для каждого элемента */
+  }
+
+  @media (max-width: 768px) {
+    .cloth-item {
+      width: 45%; /* Изменяем ширину элементов на мобильных устройствах */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .cloth-item {
+      width: 100%; /* Изменяем ширину элементов на мобильных устройствах с очень узкими экранами */
+    }
+  }
+ .animated-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 16px 36px;
+      border: 4px solid;
+      border-color: #007bff;
+      font-size: 16px;
+      text-decoration: none;
+      background-color: inherit;
+      border-radius: 100px;
+      font-weight: 600;
+      color: cornflowerblue;
+      box-shadow: 0 0 0 2px #007bff;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button svg {
+      position: absolute;
+      width: 24px;
+      z-index: 9;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button .arr-1 {
+      right: 16px;
+    }
+
+    .animated-button .arr-2 {
+      left: -25%;
+    }
+
+    .animated-button .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: cornflowerblue;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button .text {
+      position: relative;
+      z-index: 1;
+      transform: translateX(-12px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button:hover {
+      box-shadow: 0 0 0 12px transparent;
+      color: #007bff;
+      border-radius: 12px;
+    }
+
+    .animated-button:hover .arr-1 {
+      right: -25%;
+    }
+
+    .animated-button:hover .arr-2 {
+      left: 16px;
+    }
+
+    .animated-button:hover .text {
+      transform: translateX(12px);
+    }
+
+    .animated-button:hover svg {
+      fill: #212121;
+    }
+
+    .animated-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 4px rebeccapurple;
+    }
+
+    .animated-button:hover .circle {
+      width: 220px;
+      height: 220px;
+      opacity: 1;
+    }

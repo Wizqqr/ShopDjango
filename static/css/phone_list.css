@@ -1,0 +1,250 @@
+.containerPhone {
+    background-color: #f6f7ff;
+    padding: 20px;
+}
+/* Form Styles */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input[type="search"] {
+    width: 70%; /* Уменьшаем ширину поля ввода */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 8px 15px; /* Уменьшаем размер кнопки */
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Comments Section Styles */
+/* Comments Section Styles */
+.comments-section {
+    margin: 20px 500px 20px 140px;
+    opacity: 1; /* Начальное значение непрозрачности */
+    transition: opacity 0.5s ease; /* Добавляем анимацию изменения непрозрачности */
+}
+
+.comment-text {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Устанавливаем непрозрачность для новых комментариев */
+    transition: opacity 0.5s ease; /* Добавляем анимацию появления */
+}
+
+.comment-text.show {
+    opacity: 1; /* По достижении этого класса комментарий становится видимым */
+}
+
+/* Comment Form Styles */
+.comments-creation{
+    margin: 20px 1000px 20px 140px;
+}
+
+
+/* Для экранов с шириной менее 768px (мобильные устройства) */
+@media only screen and (max-width: 768px) {
+    .comments-section {
+        margin: 20px 10px;
+    }
+    .comment-form textarea{
+            width: calc(100% - 22px); /* Уменьшаем ширину поля ввода */
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .comments-creation {
+        margin: 20px 10px; /* Уменьшаем отступы для мобильных устройств */
+    }
+
+}
+
+.comment-form textarea {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+.comment-form button {
+    display: block;
+    width: 20em;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Phone List Styles */
+.phone-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    column-gap: 20px;
+    flex-wrap: wrap; /* Добавлено свойство flex-wrap */
+}
+.phone-list-title{
+    text-align: center;
+}
+.phone-item {
+    transition: transform 0.5s ease;
+    width: calc(100% - 40px); /* Уменьшаем ширину элемента списка */
+    max-width: 300px; /* Устанавливаем максимальную ширину */
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    border-radius: 20px; /* Уменьшаем радиус скругления углов */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.phone-item:hover {
+    transform: scale(1.05); /* Увеличение размера при наведении */
+}
+
+.phone-item:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+.phone-image {
+    height: auto; /* Адаптивная высота изображения */
+    width: 100%;
+    border-radius: 20px 20px 0 0; /* Уменьшаем радиус скругления углов */
+}
+
+.phone_text {
+    padding: 15px;
+}
+
+.phone-title {
+    font-size: 1.1em; /* Уменьшаем размер заголовка */
+    color: #333;
+    margin-top: 0;
+}
+
+.phone-description {
+    margin-top: 10px;
+}
+
+.phone-price {
+    margin: 0;
+}
+
+.phone-stock {
+    margin: 5px 0;
+}
+
+.phone-detail-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.phone-detail-link:hover {
+    text-decoration: underline;
+}
+.joke-section {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.joke-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.joke-card {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.clothing-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.clothing-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.clothing-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.clothing-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.clothing-text {
+    padding: 15px;
+}
+
+.clothing-title {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.clothing-brand {
+    font-size: 1em;
+    color: #888;
+    margin: 5px 0;
+}
+
+.clothing-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .clothing-item {
+        width: 95%;
+    }
+}

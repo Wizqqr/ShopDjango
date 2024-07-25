@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+
+<form method="POST">
+    <h1>Вы уверенны что хотите удалить этот телефон</h1>
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+    <button><a href="/phone_list/">Отмена</a></button>
+</form>
+
+</body>
+</html>
+
+    {% include 'footer.html' %}

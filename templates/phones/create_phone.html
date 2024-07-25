@@ -1,0 +1,20 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/phone_create.css' %}">
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/create_phone/" class="decor" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+  <button type="submit">Add</button>
+  <button type="reset">Clear</button>
+</form>
+
+</body>
+</html>
+    {% include 'footer.html' %}

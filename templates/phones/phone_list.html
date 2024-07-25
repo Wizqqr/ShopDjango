@@ -1,0 +1,69 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/phone_list.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta tag -->
+    <title>Phone List</title>
+</head>
+<body>
+<div class="containerPhone">
+    <h1 class="phone-list-title">Список телефонов</h1>
+    <form action="{% url 'phone_search' %}" method="GET" class="search-form">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <button type="submit" class="btn btn-primary">Поиск</button>
+    </form>
+
+    <div class="phone-list" id="phone-list">
+        {% for phone in phones %}
+            <li class="phone-item">
+                <img class="phone-image" src="{{ phone.image.url }}" alt="phone">
+                <div class="phone_text">
+                    <h2 class="phone-title">{{ phone.title }}</h2>
+                    <div class="phone-description">
+                        <p class="phone-price">${{ phone.price_for_first }}.00</p>
+                        <p class="phone-stock">{% if phone.in_stock %} В наличии {% else %} Нет в наличии {% endif %}</p>
+                        <a class="phone-detail-link" href="{% url 'phone_detail' phone.id %}">Подробнее</a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </div>
+
+    <div class="comments-section">
+        <h1 class="comments-title">Comments:</h1>
+        {% for comment in comments %}
+            <p class="comment-text">{{ comment.text }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="comments-creation">
+        <h2 class="add-comment-title">Add a Comment</h2>
+        <form id="comment-form" method="POST" class="comment-form" data-url="{% url 'create_comment_ajax' %}">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Write your comment here..." required></textarea>
+            <button type="submit">Add Comment</button>
+        </form>
+    </div>
+    <div class="clothing-list" id="clothing-list">
+    {% for clothing in clothes %}
+        <li class="clothing-item">
+            <img class="clothing-image" src="{{ clothing.image }}" alt="clothing">
+            <div class="clothing-text">
+                <h2 class="clothing-title">{{ clothing.name }}</h2>
+                <p class="clothing-brand">{{ clothing.brand }}</p>
+                <p class="clothing-description">{{ clothing.description }}</p>
+            </div>
+        </li>
+    {% endfor %}
+</div>
+
+    <script src="{% static 'js/phone_js.js' %}"></script>
+    <script src="{% static 'js/phone_filter.js' %}"></script>
+
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

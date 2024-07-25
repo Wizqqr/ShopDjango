@@ -1,0 +1,44 @@
+.mainshop_image{
+    display: block;
+    margin: 0 auto;
+    max-height: 105px;
+    width: auto;
+}
+.Phones{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    margin-top: 25px;
+}
+
+.MainShop{
+    display: block;
+    margin: 0 auto;
+    max-width: 76%;
+    margin-top: 50px;
+}
+.mainshop_title{
+    color: #1d1d1f;
+    display: block;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-weight: 600;
+    margin-top: 7px;
+    letter-spacing: -.016em;
+    line-height: 1.4285914286;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+}
+.StartText{
+        display: inline;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    line-height: 1.0834933333;
+color:#6e6e73
+}

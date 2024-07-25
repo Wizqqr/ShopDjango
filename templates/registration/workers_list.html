@@ -1,0 +1,39 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul>
+        {% for i in object_list %}
+
+            <li>
+            <h1>Привет - {{ i.username }}</h1>
+            <p>Почта - {{ i.email }}</p>
+            <p>Имя - {{ i.username }}</p>
+            <p>Возраст - {{ i.age }}</p>
+                <p>Уровень - {{ i.level }}</p>
+            {% if i.salary %}
+            <p>Ваша зарплата - {{ i.salary }}</p>
+            {% else %}
+            <p>Зарплаты нет</p>
+            {% endif %}
+            </li>
+
+        {% endfor %}
+    </ul>
+    <form action="/workerslogin/" method="POST">
+        {% csrf_token %}
+        <button type="submit">Выйти</button>
+    </form>
+
+
+
+</div>
+</body>
+</html>

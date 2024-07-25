@@ -1,0 +1,23 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Профиль пользователя</h1>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Имя пользователя:</strong> {{ user.username }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+        <li class="list-group-item"><strong>Активен:</strong> {{ user.is_active }}</li>
+        <li class="list-group-item"><strong>Последний вход:</strong> {{ user.last_login }}</li>
+    </ul>
+</div>
+</body>
+</html>
+{% include 'footer.html' %}

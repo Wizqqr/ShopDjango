@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/phone_edit.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Phone</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="form-title">Add a Phone</h1>
+    <form method="post" class="phone-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-submit">Change</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ phone.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/phone_detail.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="phone-images">
+                <img class="img-fluid" src="{{ phone.image.url }}" alt="{{ phone.title }}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="phone-info">
+                <h1 class="phone-title">{{ phone.title }}</h1>
+                <p class="phone-price">{{ phone.price_for_first }}$</p>
+                <p class="apple-card">Get 3% Daily Cash with Apple Card</p>
+                <p class="personalize">Personalize them. It’s fast and free.</p>
+                <p class="engrave-description">Engrave a mix of emoji, names, initials, and numbers to make it unmistakably yours. Only at Apple.</p>
+                <button class="btn btn-primary add-to-bag-button">Add to Bag</button>
+                <div class="purchase-info mt-3">
+                    <p>To purchase with monthly pricing, add this item to your bag and choose to check out with Apple Card Monthly Installments.<sup>◊</sup></p>
+                </div>
+                <div class="availability mt-3">
+                    <p>Delivery: In Stock</p>
+                    <p>Free Shipping</p>
+                    <p><a href="#">Get delivery dates</a></p>
+                    <p>Pickup: <a href="#">Check availability</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class = "otherModels">
+    <img class="img-fluid" src="{{ phone.second_model.url }}" alt="{{ phone.title }}">
+    <img class="img-fluid" src="{{ phone.third_model.url }}" alt="{{ phone.title }}">
+</div>
+    <div class="phone_detail_reviews_mt-5">
+        <h2 class="reviews-title">Отзывы</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Пользователь</th>
+                    <th>Отзыв</th>
+                    <th>Оценка</th>
+                    <th>Дата отзыва</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{ review.user.username }}</td>
+                    <td>{{ review.description }}</td>
+                    <td>{{ review.stars }}</td>
+                    <td>{{ review.created_at }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Пока нет отзывов.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Добавить отзыв</h3>
+        <form id="comment-form" method="POST" class="comment-form" data-url="{% url 'create_review_ajax' %}">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit" class="btn btn-secondary">Отправить</button>
+        </form>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'js/phone_detail.js' %}"></script>
+</body>
+</html>
